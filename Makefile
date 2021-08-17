@@ -4,7 +4,7 @@
 # Version
 #
 VERSION=$(shell git describe --tags --dirty)
-WXVERSION=3.0
+WXVERSION=3.1
 
 #
 # Source files
@@ -99,7 +99,7 @@ endif
 #
 ifeq ($(OS),Darwin)
 COMMON_SRCS+=PosixSerialPort.cpp OSXPortFactory.cpp
-COMMON_CXXFLAGS=-arch x86_64 -mmacosx-version-min=10.9
+COMMON_CXXFLAGS=-arch x86_64 -mmacosx-version-min=10.9 -std=c++11
 COMMON_LDFLAGS=-arch x86_64 -mmacosx-version-min=10.9
 APP=BOSSA.app
 DMG=bossa-$(VERSION).dmg
